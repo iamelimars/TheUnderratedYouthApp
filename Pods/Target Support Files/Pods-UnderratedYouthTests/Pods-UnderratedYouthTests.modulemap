@@ -1,0 +1,6 @@
+framework module Pods_UnderratedYouthTests {
+  umbrella header "Pods-UnderratedYouthTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
