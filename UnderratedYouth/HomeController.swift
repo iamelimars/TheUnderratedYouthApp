@@ -7,28 +7,77 @@
 //
 
 import UIKit
+import Moltin
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let cellId = "categoryCell"
+//    var allCategories: NSArray = []
+    
+//    var cats: [Category] = {
+//       var firstCategory = Category()
+//        firstCategory.title = "Shirts"
+//        firstCategory.status = 1
+//        
+//        var secondCategory = Category()
+//        secondCategory.title = "Hats"
+//        secondCategory.status = 1
+//        
+//        return [firstCategory, secondCategory]
+//    }()
+    
+    var categories: [Category]?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)
         
-        
-
-        // Do any additional setup after loading the view.
+        fetchCategories()
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        
+        return categories?.count ?? 0
+    }
+    
+    func fetchCategories(){
+        Moltin.sharedInstance().category.listing(withParameters: ["limit": 10], success: { (response) -> Void in
+            let results = response?["result"] as! NSArray
+            self.categories = [Category]()
+            
+            for dictionary in results as! [[String: AnyObject]] {
+                
+                let category = Category()
+                category.title = (dictionary["title"] as! String)
+                self.categories?.append(category)
+                
+                print(dictionary["status"])
+                
+            }
+            
+            
+            
+            self.collectionView?.reloadData()
+        }, failure: { (response, error) -> Void in
+            print("Couldn't get products, something went wrong...")
+            print(error as Any)
+        })
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .gray
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
+        
+        cell.category = categories?[indexPath.item]
+        
+        cell.backgroundColor = UIColor.init(colorLiteralRed: 237/255.0, green: 238/255.0, blue: 239/255.0, alpha: 1)
+        
         return cell
     }
     

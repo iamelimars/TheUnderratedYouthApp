@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moltin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
         window?.rootViewController = UINavigationController(rootViewController: homeController)
+        
+        Moltin.sharedInstance().setPublicId("vjA7hGXCc7GAgvIpaYUdAzv7VYMp5HZiJkCOwwlX6K")
+        
         return true
     }
 
