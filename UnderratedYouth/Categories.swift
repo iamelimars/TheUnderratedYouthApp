@@ -12,7 +12,7 @@ class Category: NSObject {
     
     var title: String = ""
     var status: NSInteger = 0
-    var id: NSInteger = 0
+    var id: String = ""
     
 }
 

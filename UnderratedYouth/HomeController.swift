@@ -56,10 +56,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 
                 let category = Category()
                 category.title = (dictionary["title"] as! String)
+                category.id = dictionary["id"] as! String
                 self.categories?.append(category)
                 
-                print(dictionary["status"])
-                
+                print(dictionary)
             }
             
             
@@ -79,6 +79,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         cell.backgroundColor = UIColor.init(colorLiteralRed: 237/255.0, green: 238/255.0, blue: 239/255.0, alpha: 1)
         
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCat: Category = categories![indexPath.item]
+        
+        print(selectedCat.title)
+        print(selectedCat.id)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
