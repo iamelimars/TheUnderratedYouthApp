@@ -12,6 +12,7 @@ import Moltin
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let cellId = "categoryCell"
+    var selectedId = ""
 //    var allCategories: NSArray = []
     
 //    var cats: [Category] = {
@@ -59,7 +60,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 category.id = dictionary["id"] as! String
                 self.categories?.append(category)
                 
-                print(dictionary)
+//                print(dictionary)
             }
             
             
@@ -85,14 +86,26 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let selectedCat: Category = categories![indexPath.item]
         
-        print(selectedCat.title)
-        print(selectedCat.id)
+//        print(selectedCat.title)
+//        print(selectedCat.id)
+        
+        self.selectedId = selectedCat.id
+        
+        let productVc = ProductController()
+        productVc.categoryId = selectedCat.id
+//        self.present(productVc, animated: true, completion: nil)
+        navigationController?.pushViewController(productVc, animated: true)
+        
+        
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height / 2)
     }
+    
+    
+    
 
    
 }

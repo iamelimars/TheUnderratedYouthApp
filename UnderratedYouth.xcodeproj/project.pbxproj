@@ -18,6 +18,8 @@
 		90C5BDDE1E8AD73100B394D9 /* UnderratedYouthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5BDDD1E8AD73100B394D9 /* UnderratedYouthTests.swift */; };
 		90C5BDE91E8AD73100B394D9 /* UnderratedYouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5BDE81E8AD73100B394D9 /* UnderratedYouthUITests.swift */; };
 		90C5BDF71E8ADA5600B394D9 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5BDF61E8ADA5600B394D9 /* HomeController.swift */; };
+		90F4701E1E8C906500D0B06A /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4701D1E8C906500D0B06A /* ProductController.swift */; };
+		90F470201E8CB10800D0B06A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4701F1E8CB10800D0B06A /* ProductCell.swift */; };
 		9D9AEB8547D8AC097E0467A2 /* Pods_UnderratedYouth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66C415ED71A58767A6F01FD /* Pods_UnderratedYouth.framework */; };
 		AD4153EA596AD1E1C9923CFA /* Pods_UnderratedYouthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90862692D2C820D99CC3ED60 /* Pods_UnderratedYouthTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		90C5BDE81E8AD73100B394D9 /* UnderratedYouthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderratedYouthUITests.swift; sourceTree = "<group>"; };
 		90C5BDEA1E8AD73100B394D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90C5BDF61E8ADA5600B394D9 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		90F4701D1E8C906500D0B06A /* ProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		90F4701F1E8CB10800D0B06A /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		A277B067252831DCB34B74F5 /* Pods-UnderratedYouthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnderratedYouthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnderratedYouthTests/Pods-UnderratedYouthTests.release.xcconfig"; sourceTree = "<group>"; };
 		E66C415ED71A58767A6F01FD /* Pods_UnderratedYouth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnderratedYouth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE7FA3579B6CED6F96CFAD6 /* Pods-UnderratedYouthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnderratedYouthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnderratedYouthUITests/Pods-UnderratedYouthUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				900D72FE1E8B07A8005FA6E4 /* CategoryCell.swift */,
+				90F4701F1E8CB10800D0B06A /* ProductCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				90C5BDF61E8ADA5600B394D9 /* HomeController.swift */,
+				90F4701D1E8C906500D0B06A /* ProductController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -483,9 +489,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C5BDC91E8AD73100B394D9 /* AppDelegate.swift in Sources */,
+				90F4701E1E8C906500D0B06A /* ProductController.swift in Sources */,
 				90C5BDF71E8ADA5600B394D9 /* HomeController.swift in Sources */,
 				900D73031E8B0A2E005FA6E4 /* Categories.swift in Sources */,
 				900D72FF1E8B07A8005FA6E4 /* CategoryCell.swift in Sources */,
+				90F470201E8CB10800D0B06A /* ProductCell.swift in Sources */,
 				900D73011E8B0961005FA6E4 /* HomeDatasource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
